@@ -3,42 +3,58 @@
 public class Main {
     public static void main(String[] args) {
 
+        String[][] tablero = new String[10][10];
 
-        System.out.println(" BATALLA NAVAL");
 
-       String[][]tablero  = new String[5][5];
+        System.out.println("----------- --BATALLA NAVAL--------  ");
 
-       //*Llenar el tablero *//
-        for(int i =0; i< tablero.length; i++){
-            for (int j=0; j < tablero[i].length; j++){
-                tablero[i][j] = "~";
+        System.out.println("""
+                Instrucciones.
+                1.~ = Agua.
+                2.B = Barco.
+                3.X = Impacto.
+                4.O = Disparo fallido.
+                """);
+        System.out.println("Objetivo: encontrar y destruir todos los barcos ");
+
+        System.out.println();
+
+        //*Llenar el tablero *//
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[i].length; j++) {
+                tablero[i][j] = " ~ ";
             }
         }
 
-        //* Mostrar el tablero *//
-        for(int i=0; i< tablero.length; i++){
-            for(int j=0; j<tablero[i].length; j++ ){
-                System.out.print(tablero[i][j] +" ");
+        //* Mostrar numeros de las columnas *//
+        System.out.print(" ");
+        for (int j = 0; j < tablero[0].length; j++) {
+            System.out.print(j + "   ");
+        }
+        System.out.println();
+
+
+
+        //*Llenar el tablero *//
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[i].length; j++) {
+                tablero[i][j] = " ~ ";
+            }
+        }
+
+        // Crear los barcos*//
+        tablero[2][3] = "B";
+        tablero[2][4] = "B";
+        tablero[5][6] = "B";
+
+        //*Mostrar *//
+        for (int i = 0; i < tablero.length; i++) {
+            System.out.print(i + " ");
+            for (int j = 0; j < tablero[i].length; j++) {
+                System.out.print(tablero[i][j] + " ");
             }
             System.out.println();
         }
-
-
-        //* Colocar barcos *//
-        tablero[1][2]= "B";
-        tablero [3][4] = "B";
-
-        for(int i=0; i< tablero.length; i++){
-            for(int j=0; j< tablero[i].length; i++){
-
-            }
-        }
-
-
-
-
-
-
     }
-
 }
+
