@@ -45,10 +45,10 @@ public class Main {
 
                     System.out.println("""
                             Instrucciones.
-                            1.~ = Agua.
-                            2.B = Barco.
-                            3.X = Impacto.
-                            4.O = Disparo fallido.
+                            ( ~ )= Agua.
+                            ( B )= Barco.
+                            ( X )= Impacto.
+                            ( O )= Disparo fallido.
                             """);
 
                     System.out.println("Regresar al menu 1.");
@@ -108,13 +108,13 @@ public class Main {
                     /*Disparos*/
                     int barcosDestruidos = 0;
 
-                    int intentos = 5;
+                    int intentos = 10;
 
 
                     /* While para permitir varios disparos */
                     while(intentos > 0 && barcosDestruidos < 3){
 
-                        System.out.println("\nIntentos restantes: " + intentos);
+                        System.out.println("Intentos restantes: " + intentos);
 
                         System.out.println("Barcos destruidos: " + barcosDestruidos);
 
@@ -165,7 +165,7 @@ public class Main {
                             }
 
                             /* Mostrar tablero actualizado */
-                            System.out.println("\nTABLERO ACTUALIZADO:\n");
+                            System.out.println("TABLERO ACTUALIZADO:");
 
                             System.out.print("");
 
@@ -211,12 +211,12 @@ public class Main {
                     /* Resultado final */
                     if(barcosDestruidos == 3){
 
-                        System.out.println("\n¡¡GANASTE LA PARTIDA!!");
+                        System.out.println("¡¡GANASTE LA PARTIDA!!");
 
                     }
                     else{
 
-                        System.out.println("\nTe quedaste sin intentos");
+                        System.out.println("Te quedaste sin intentos");
 
                     }
 
