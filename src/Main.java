@@ -69,32 +69,77 @@ public class Main {
                     tablero[2][4] = "B";
                     tablero[5][6] = "B";
 
-                    //* Mostrar numeros de columnas*//
-                    System.out.print("");
-                    for (int j = 0; j < tablero.length; j++) {
-                        System.out.print(j + "    ");
-                    }
+                    int barcosr =3;
 
-                    System.out.println();
-
-                    //*Mostrar el tablero ocultando barcos *//
-                    for (int i = 0; i < tablero.length; i++) {
-                        System.out.print(i + "   ");
-                        for (int j = 0; j < tablero[i].length; j++) {
-                            System.out.print("  ~ ");
+                    //* ciclo al juego *//
+                    while ( barcosr > 0) {
+                        //* Mostrar numero de columnas *//
+                        System.out.print("");
+                        for (int j = 0; j < tablero.length; j++) {
+                            System.out.print(j + " ");
                         }
+
+
                         System.out.println();
+                        //* Mostrar numeros de columnas*//
+                        System.out.print("");
+                        for (int j = 0; j < tablero.length; j++) {
+                            System.out.print(j + "    ");
+                        }
+
+                        System.out.println();
+
+                        //*Mostrar el tablero ocultando barcos *//
+                        for (int i = 0; i < tablero.length; i++) {
+                            System.out.print(i + " ");
+                            for (int j = 0; j < tablero.length; j++) {
+                                if (tablero[i][j] == "B") {
+                                    System.out.print("  ~  ");
+                                } else {
+                                    System.out.print(tablero[i][j] + " ");
+                                }
+                            }
+                            System.out.println();
+                        }
+
+                        System.out.println("Ingrese la fila (-1 para salir)");
+                        fila = teclado.nextInt();
+                        if (fila == -1) {
+                            break;
+                        }
+
+                        System.out.println("ingrese la columna ");
+                        columna = teclado.nextInt();
+
+                        //* Genera el disparo *//
+                        if (tablero[fila][columna] == "B") {
+                            System.out.println(" IMPACTO");
+                            tablero[fila][columna] = "X";
+                            barcosr--;
+                        } else {
+                            System.out.println("Agua");
+                            tablero[fila][columna] = "O";
+                        }
+
+                        System.out.println();
+
+                        //* Mostrar el disparo *//
+                        for (int i = 0; i < tablero.length; i++) {
+                            System.out.print(i + " ");
+                            for (int j = 0; j < tablero.length; j++) {
+                                if (tablero[i][j] == "B") {
+                                    System.out.print("  ~  ");
+                                } else {
+                                    System.out.print(tablero[i][j] + " ");
+
+                                }
+                            }
+                            System.out.println();
+                        }
+
                     }
-
-                    System.out.println("Ingrese la fila");
-                    fila = teclado.nextInt();
-
-                    System.out.println("ingrese la columna ");
-                    columna = teclado.nextInt();
-
-
-                    System.out.println("Regresar al menu 2.");
-                    opcionm = teclado.nextInt();
+                    System.out.println(" GANASTE");
+                    System.out.println("Destruiste todos los barcos");
 
                     break;
                 case 3:
